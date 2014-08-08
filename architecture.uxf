@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="11.3">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>225</x>
+      <y>459</y>
+      <w>216</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>Room
+--
++width: int
++length: int
++chair: Chair
+--
++Room( )
++display_room( ): void
++set_code( int): void
++get_code( ): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>18</y>
+      <w>207</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>/Furniture/
+--
++name: string
++x_coord, y_coord: int
++over: Object
++under: Object
+--
++get_name( ): string
++look_over( ): Object
++look_under( ): Object
+/+picture_matrix( char **): void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>225</x>
+      <y>243</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Chair
+--
+--
++chair_matrix( char **):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>459</x>
+      <y>306</y>
+      <w>207</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>Desk
+--
+*+nb_drawers: int*
+*+drawers: int **
+--
+*+look_drawer( int): void*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>288</x>
+      <y>144</y>
+      <w>278</w>
+      <h>179</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;261;162</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>252</x>
+      <y>144</y>
+      <w>53</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;27;36;99</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>54</x>
+      <y>324</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Table*
+--
+--
+*+table_matrix( char **):void*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>144</y>
+      <w>179</w>
+      <h>197</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>162;27;27;180</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>468</x>
+      <y>45</y>
+      <w>117</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Object
+--
++obj_id: int
++name: string
+--
++Object( )
+-pick( ): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>54</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>27;27;108;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>666</x>
+      <y>63</y>
+      <w>162</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>Items
+--
++items_list: bool[100]
+--
++add( )
+-use( ): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>558</x>
+      <y>72</y>
+      <w>125</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=*
+m2=O..1</panel_attributes>
+    <additional_attributes>27;27;108;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>684</x>
+      <y>171</y>
+      <w>126</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Classe Items:
+forcer une
+instance unique
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>333</x>
+      <y>378</y>
+      <w>251</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>234;27;27;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>288</x>
+      <y>279</y>
+      <w>53</w>
+      <h>197</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>36;27;27;180</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>108</x>
+      <y>360</y>
+      <w>161</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>27;27;144;99</additional_attributes>
+  </element>
+</diagram>
