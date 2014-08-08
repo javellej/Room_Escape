@@ -9,6 +9,9 @@ class Chair: public Furniture
 {
     public:
         Chair( );
+        Chair( string name);
+
+        void picture_matrix( char **);
 };
 
 #endif /* CHAIR_H */
