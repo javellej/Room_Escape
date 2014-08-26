@@ -6,6 +6,14 @@ Table::Table( )
     this->name = "table";
 }
 
+Table::Table( int x, int y)
+{
+    this->x_coord = x;
+    this->y_coord = y;
+    this->width = 17;
+    this->length = 19;
+}
+
 Table::Table( string name)
 {
     this->name = name;

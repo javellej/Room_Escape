@@ -1,9 +1,9 @@
 #ifndef ROOM_H
 #define ROOM_H
 
-#include "chair.h"
-//#include "table.h"
-#include "desk.h"
+#include <list>
+#include "furniture.h"
+using namespace std;
 
 class Room
 {
@@ -11,11 +11,13 @@ class Room
     
         int width, length;
         int door_code;
+        int furniture_total;
         /* List of furnitures in the room */
-        Chair chair;
+        Furniture * furnitures[20];
 
-        Room( int, int, Chair);
+        Room( int, int); 
 
+        void add_furniture( Furniture *);
         void display_room( void);
         void set_code( int);
         void display_code( void);

@@ -10,6 +10,7 @@ class Furniture
     public:
 
         int x_coord, y_coord;
+        int width, length;
         string name;
         Object over;
         Object under;   

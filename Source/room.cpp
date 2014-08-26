@@ -5,11 +5,17 @@
 #include "furniture.h"
 using namespace std;
 
-Room::Room( int room_width, int room_length, Chair c)
+Room::Room( int room_width, int room_length)
 {
     this->width = room_width;
     this->length = room_length;
-    this->chair = c;
+    this->furniture_total = 0;
+}
+
+void Room::add_furniture( Furniture * f)
+{
+    this->furnitures[furniture_total] = f;
+    this->furniture_total++;
 }
 
 void Room::display_room( void)
@@ -33,22 +39,28 @@ void Room::display_room( void)
         room_matrix [j][length-1] = '|';
     }
 
-    /* inserting the pictures of the furnitures */
-    char * chair_matrix[8];
-    for ( int i=0; i<8; i++ )
+    /* add picture of first piece of furniture */
+    for ( int f_num=0; f_num<furniture_total; f_num++)
     {
-        chair_matrix[i] = new char[5];
-        fill_n( chair_matrix[i], 5, ' ');
-    }
-    this->chair.picture_matrix( chair_matrix);
-    for ( int i=0; i<8; i++ )
-    {
-        for ( int j=0; j<5; j++ )
+        int wid = (this->furnitures[f_num])->width;
+        int len = (this->furnitures[f_num])->length;
+        int x = (this->furnitures[f_num])->x_coord;
+        int y = (this->furnitures[f_num])->y_coord;
+
+        char * furniture_matrix[wid];
+        for ( int i=0; i<wid; i++ )
         {
-            room_matrix[i+1][j+20] = chair_matrix[i][j];
+            furniture_matrix[i] = new char[len];
+        }
+        (this->furnitures[f_num])->picture_matrix( furniture_matrix);
+        for ( int i=0; i<wid; i++ )
+        {
+            for ( int j=0; j<len; j++ )
+            {
+                room_matrix[i+x][j+y] = furniture_matrix[i][j];
+            }
         }
     }
-
 
     /* display the room matrix */
     for ( int i=0; i<width; i++ )

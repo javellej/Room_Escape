@@ -2,17 +2,30 @@
 #include <string>
 #include "room.h"
 #include "chair.h"
+#include "desk.h"
 #include "object.h"
 #include "items.h"
 using namespace std;
+
+void create_room( int width, int length)
+{
+    Room main_room( width, length);
+}
 
 int main( )
 {
     int value;
 
     cout << "You are trapped inside a room." << endl;
-    Chair chaise_bleue;
-    Room living_room (20, 40, chaise_bleue);
+    Chair chaise_bleue( 2, 5);
+    Desk bureau_rouge( 7, 20);
+    //Table table_jaune;
+    //Room living_room (35, 70, chaise_bleue, bureau_rouge, table_jaune);
+    Room living_room (35, 70);
+    living_room.add_furniture( &chaise_bleue);
+    living_room.add_furniture( &bureau_rouge);
+    cout << "yhgvqnbzd" << endl;
+
     string code = "code: 8732";
     Object paper( 1, code);
     chaise_bleue.under = paper;

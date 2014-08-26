@@ -9,6 +9,7 @@ class Table: public Furniture
 {
     public:
         Table( );
+        Table( int, int);
         Table( string name);
 
         void picture_matrix( char **);
